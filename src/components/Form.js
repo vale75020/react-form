@@ -33,7 +33,8 @@ export default class Form extends Component {
 
   render() {
     return (
-      <form>
+      <form style={{backgroundColor: "black", color: "white", padding:"20px"}}>
+        <h1>Basic Form</h1>
         <input
           type="text"
           value={this.state.firstName} // pour forcer value a etre egal au state

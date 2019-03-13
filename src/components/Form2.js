@@ -7,7 +7,9 @@ export default class Form2 extends Component {
       firstName: "",
       lastName: "",
       textarea: "",
-      isFriendly: false
+      isFriendly: false,
+      gender: "",
+      favColor:"blue"
     };
     //  this.handleChange = this.handleChange.bind(this)
   }
@@ -27,9 +29,13 @@ export default class Form2 extends Component {
     type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value });
   };
 
+  handleSubmit = () => {
+    
+  }
+
   render() {
     return (
-      <div>
+      <form onSubmit={this.handleSubmit}>
         <h1>Advanced Form</h1>
         <input
           value={this.state.firstName}
@@ -48,6 +54,7 @@ export default class Form2 extends Component {
           onChange={this.handleChange}
         />
         <br />
+       
         <br />
         <textarea
           value={this.state.textarea}
@@ -67,10 +74,52 @@ export default class Form2 extends Component {
         </label>
         <br />
         <br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={this.state.gender === "male"}
+            onChange={this.handleChange}
+          />
+          Male
+        </label>
+        <br />
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={this.state.gender === "female"}
+            onChange={this.handleChange}
+          />
+          Female
+        </label>
+        {/* formik */}
+        <br />
+        <br />
+        <label>Favorite Color : </label>
+        <select 
+        value={this.state.favColor}
+        onChange={this.handleChange}
+        name="favColor"
+        >
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yellow</option>
+          <option value="pink">Pink</option>
+        </select>
+        <br />
         <h1>{this.state.firstName}</h1>
         <h1>{this.state.lastName}</h1>
         <h1>{this.state.textarea}</h1>
-      </div>
+        <h2>You are a {this.state.gender}</h2>
+        <h2>Your favorite color is :  {this.state.favColor}</h2>
+        <button>Submit</button>
+        {/* <input type="submit" /> */}
+      </form>
     );
   }
 }
