@@ -42,6 +42,7 @@ export default class Form extends Component {
           placeholder="firstname"
           onChange={this.handleChange}
         />
+        <br />
         <input
           type="text"
           value={this.state.lastName}

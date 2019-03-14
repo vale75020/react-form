@@ -35,7 +35,7 @@ export default class Form2 extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form style={{backgroundColor: "black", color: "white", padding:"20px"}} onSubmit={this.handleSubmit}>
         <h1>Advanced Form</h1>
         <input
           value={this.state.firstName}
